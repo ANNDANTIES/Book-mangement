@@ -23,7 +23,7 @@ const BookDetails = () => {
     const fetchBookDetails = async () => {
         try {
             console.log("Fetching book details for ID:", id);
-            const response = await axios.get(`https://book-management-server-1-512x.onrender.com/books/all/${id}`);
+            const response = await axios.get(`https://book-management-server-2-qccz.onrender.com/books/all/${id}`);
             console.log("Response from backend:", response.data);
             setBook(response.data);
         } catch (error) {
@@ -34,7 +34,7 @@ const BookDetails = () => {
     const fetchExternalBookData = async (title) => {
         try {
             console.log("Fetching external data for:", title);
-            const response = await axios.get(`http://localhost:8080/proxy/books/search?query=${title}`);
+            const response = await axios.get(`https://book-management-server-2-qccz.onrender.com/proxy/books/search?query=${title}`);
             console.log("External data response:", response.data);
 
             if (Array.isArray(response.data) && response.data.length > 0) {
