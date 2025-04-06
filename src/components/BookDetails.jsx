@@ -23,7 +23,7 @@ const BookDetails = () => {
     const fetchBookDetails = async () => {
         try {
             console.log("Fetching book details for ID:", id);
-            const response = await axios.get(`http://localhost:8080/books/all/${id}`);
+            const response = await axios.get(`https://book-management-server-1-512x.onrender.com/books/all/${id}`);
             console.log("Response from backend:", response.data);
             setBook(response.data);
         } catch (error) {
@@ -100,7 +100,7 @@ const BookDetails = () => {
                 </Button>
             </div>
 
-            <Button className="btn-primary m-5 float-end" onClick={() => navigate("/")}>
+            <Button className="btn-primary m-5 float-end." onClick={() => navigate("/")}>
                 🔙 Back to Book List
             </Button>
         </div>

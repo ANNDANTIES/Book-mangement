@@ -14,7 +14,7 @@ const BookList = () => {
 
     const fetchBooks = async () => {
         try {
-            const response = await axios.get("http://localhost:8080/books/all");
+            const response = await axios.get("https://book-management-server-1-512x.onrender.com/books/all");
             setBooks(response.data);
         } catch (error) {
             console.error("Error fetching books:", error);
@@ -23,7 +23,7 @@ const BookList = () => {
 
     const deleteBook = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/books/delete/${id}`);
+            await axios.delete(`https://book-management-server-1-512x.onrender.com/books/delete/${id}`);
             alert("Book deleted successfully!");
             fetchBooks();
         } catch (error) {
