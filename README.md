@@ -131,6 +131,65 @@ frontend/         # ReactJS Frontend
   	 src/          # React source code
 package.json  # Node dependencies
 README.md         # Documentation
+
+
+PushEed the backend folder to GitHub :
+
+
+git add .
+git commit -m "messages"
+git push origin master
+Create a new web service on Render:
+
+Go to Render Dashboard
+
+Click "New Web Service"
+
+Connected to GitHub repository
+
+select the backend folder
+
+Choose Environment: Docker
+
+Named service 
+
+Render will auto-detected the Dockerfile and build app
+
+Wait for build & deployment
+
+Once deployed, you'll get a Render URL, [e.g., ](https://book-management-server-2-qccz.onrender.com)
+
+Allow CORS
+
+In  Spring Boot app, made CORS is enabled to accept requests from the Netlify domain.
+
+Update URLs
+
+Use the Render backend URL in your frontend React app wherever API calls are made.
+
+Frontend Deployment (React on Netlify)
+Push the frontend folder to GitHub incase of updates
+
+git add .
+git commit -m "messages"
+git push origin main
+Deploy on Netlify:
+
+Go to Netlify Dashboard
+
+Click "Add new site" > "Import from Git"
+
+Connect GitHub account and select the repo
+
+Set build command as: npm run build
+
+Set publish directory as: frontend/build
+
+Click Deploy
+
+
+
+
 ________________________________________
 Future Enhancements
 •	Implement GraphQL as an API gateway.
